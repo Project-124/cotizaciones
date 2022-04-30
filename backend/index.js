@@ -5,6 +5,8 @@ const app = express();
 const userRouter = require("./routes/UserRoute")
 const PORT = 5050;
 
+
+// prueba
 app.listen(PORT, () => {
   console.log(`El servidor esta en escuchando en el puerto ${PORT}`);
 });
