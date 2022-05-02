@@ -1,0 +1,4 @@
+const PREFIX_FOR_ENV = "DB_";
+const MAX_DB_ENV_PROPERTIES = 5;
+
+module.exports = { PREFIX_FOR_ENV, MAX_DB_ENV_PROPERTIES };
