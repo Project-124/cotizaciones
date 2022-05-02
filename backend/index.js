@@ -8,6 +8,8 @@ const { sequelize } = require("./models/config/DatabaseConfig");
 
 sequelize.sync({ force: true }).then(() => console.log("Drop and re-sync db"));
 
+
+// prueba
 app.listen(PORT, () => {
   console.log(`El servidor esta en escuchando en el puerto ${PORT}`);
 });
