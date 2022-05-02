@@ -14,7 +14,7 @@ const includesAllPropertiesForDatabaseConfig = () => {
   return keys.length === MAX_DB_ENV_PROPERTIES;
 };
 
-const getSequelize = () => {
+const getSequelizeInstance = () => {
   if (!includesAllPropertiesForDatabaseConfig()) {
     throw new Error(INVALID_DB_CONFIGURATION);
   }
@@ -29,11 +29,11 @@ const getSequelize = () => {
     }
   );
 };
-const sequelize = getSequelize();
+const sequelizeInstance = getSequelizeInstance();
 
 module.exports = { 
-    sequelize: sequelize,
-    userModel: user.userModel(sequelize),
-    productModel: product.productModel(sequelize),
-    quoteModel: quote.quoteModel(sequelize)
+    sequelize: sequelizeInstance,
+    userModel: user.userModel(sequelizeInstance),
+    productModel: product.productModel(sequelizeInstance),
+    quoteModel: quote.quoteModel(sequelizeInstance)
  };

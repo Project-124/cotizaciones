@@ -3,7 +3,7 @@ const { DataTypes } = require("sequelize");
 const getQuoteModel = (sequelize) =>
   sequelize.define("quote", {
     id: {
-      ty: DataTypes.INTEGER,
+      type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
     },

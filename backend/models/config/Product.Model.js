@@ -3,7 +3,7 @@ const { DataTypes } = require("sequelize");
 const getProductModel = (sequelize) =>
   sequelize.define("product", {
     id: {
-      ty: DataTypes.INTEGER,
+      type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
     },

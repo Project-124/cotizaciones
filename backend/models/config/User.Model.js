@@ -3,12 +3,13 @@ const { DataTypes } = require("sequelize");
 const getUserModel = (sequelize) =>
   sequelize.define("user", {
     id: {
-      ty: DataTypes.INTEGER,
+      type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
     },
     name: {
       type: DataTypes.STRING(60),
+      
     },
     middle_name: {
       type: DataTypes.STRING(30),
@@ -18,6 +19,9 @@ const getUserModel = (sequelize) =>
     },
     email: {
       type: DataTypes.STRING(255),
+      validate:{
+        isEmail:true
+      }
     },
     password: {
       type: DataTypes.STRING,
