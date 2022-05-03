@@ -2,9 +2,9 @@ const { config } = require("dotenv");
 const { PREFIX_FOR_ENV, MAX_DB_ENV_PROPERTIES } = require("../../constants/Db");
 const { INVALID_DB_CONFIGURATION } = require("../../constants/Messages");
 const sequelize = require("sequelize");
-const user = require("./User.Model")
-const product =  require("./Product.Model")
-const quote = require("./Quote.Model");
+const user = require("../User.Model.js")
+const product =  require("../Product.Model")
+const quote = require("../Quote.Model");
 config();
 
 const includesAllPropertiesForDatabaseConfig = () => {

@@ -2,14 +2,14 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const app = express();
-const userRouter = require("./routes/UserRoute");
+const userRouter = require("./routes/User.Router");
+const productRouter = require("./routes/Product.Router");
+const quoteRouter = require("./routes/Quote.Router");
 const PORT = 5050;
 const { sequelize } = require("./models/config/DatabaseConfig");
 
-sequelize.sync({ force: true }).then(() => console.log("Drop and re-sync db"));
+sequelize.sync();
 
-
-// prueba
 app.listen(PORT, () => {
   console.log(`El servidor esta en escuchando en el puerto ${PORT}`);
 });
@@ -19,6 +19,8 @@ app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/user", userRouter);
+app.use("/product", productRouter);
+app.use("/quote", quoteRouter);
 
 app.get("/", (req, res) => {
   res.json({

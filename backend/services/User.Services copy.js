@@ -36,7 +36,7 @@ class UserService {
         }
 
     }
-    static delete(response, request) {
+    static async delete(response, request) {
         const id = request.params.id;
         userModel.destroy({
             where: {

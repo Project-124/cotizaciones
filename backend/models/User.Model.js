@@ -1,5 +1,5 @@
 const { DataTypes } = require("sequelize");
-const { PATTERN_FOR_NAME } = require("../../constants/RegexPatterns");
+const { PATTERN_FOR_NAME } = require("../constants/RegexPatterns");
 
 const getUserModel = (sequelize) =>
   sequelize.define("user", {
